@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export enum FETCH_METHODS {
   GET = 'GET',
   PATCH = 'PATCH',
@@ -5,3 +7,7 @@ export enum FETCH_METHODS {
   PUT = 'PUT',
   DELETE = 'DELETE',
 }
+
+export type ProviderProps = {
+  children: ReactNode;
+};
