@@ -1,12 +1,17 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import '../styles/globals.scss';
+import { Header } from '@/layout/Header';
+import { Footer } from '@/layout/Footer';
+import cn from 'classnames';
+import styles from './layout.module.scss';
+import { WithRedux } from '@/providers/WithRedux';
 
 const inter = Inter({ subsets: ['cyrillic'] });
 
 export const metadata: Metadata = {
   title: 'Template',
-  description: 'NextJS Template App',
+  description: 'Koreana App',
 };
 
 export default function RootLayout({
@@ -14,9 +19,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const layoutClassName = cn(inter.className, styles.wrapper);
+
   return (
-    <html lang="ru">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <WithRedux>
+      <html lang="ru">
+        <body className={layoutClassName}>
+          <Header />
+          <main className={styles.content}>{children}</main>
+          <Footer />
+        </body>
+      </html>
+    </WithRedux>
   );
 }

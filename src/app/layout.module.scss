@@ -1,0 +1,18 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.content {
+  min-height: 400px;
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 10px;
+
+  @include vp-1368 {
+    padding: 0 20px;
+  }
+}
