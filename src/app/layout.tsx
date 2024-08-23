@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ['cyrillic'] });
 
 export const metadata: Metadata = {
   title: 'Template',
-  description: 'Koreana App',
+  description: 'Template App',
 };
 
 export default function RootLayout({

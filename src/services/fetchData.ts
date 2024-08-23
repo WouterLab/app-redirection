@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import axios, { AxiosRequestConfig } from 'axios';
-import { BACKEND_URL } from '@/constants/constants';
+import { BACKEND_URL } from '@/constants';
 import { FETCH_METHODS } from '@/types';
 
 type FetchParams = {
