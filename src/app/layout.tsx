@@ -1,17 +1,15 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Archivo } from 'next/font/google';
 import '../styles/globals.scss';
-import { Header } from '@/layout/Header';
-import { Footer } from '@/layout/Footer';
 import cn from 'classnames';
 import styles from './layout.module.scss';
 import { WithRedux } from '@/providers/WithRedux';
 
-const inter = Inter({ subsets: ['cyrillic'] });
+const inter = Archivo({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Template',
-  description: 'Template App',
+  title: '8 Legends',
+  description: '8 Legends AI mini-app',
 };
 
 export default function RootLayout({
@@ -23,11 +21,9 @@ export default function RootLayout({
 
   return (
     <WithRedux>
-      <html lang="ru">
-        <body className={layoutClassName}>
-          <Header />
-          <main className={styles.content}>{children}</main>
-          <Footer />
+      <html lang="en">
+        <body className={layoutClassName} id="root">
+          {children}
         </body>
       </html>
     </WithRedux>

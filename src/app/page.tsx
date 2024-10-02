@@ -1,5 +1,15 @@
-import styles from './page.module.scss';
+'use client';
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
-export default function Home() {
-  return <div className={styles.main}>Main</div>;
+function Home() {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.replace('http://192.168.0.15:3000');
+  }, [router]);
+
+  return null;
 }
+
+export default Home;
